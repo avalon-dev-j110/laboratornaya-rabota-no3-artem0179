@@ -1,6 +1,7 @@
 package ru.avalon.java.dev.j10.labs.sort;
 
 import ru.avalon.java.dev.j10.labs.Sort;
+import static ru.avalon.java.dev.j10.labs.Sort.changeItems;
 
 /**
  * Сортировка выбором (англ. selection sort).
@@ -14,10 +15,29 @@ import ru.avalon.java.dev.j10.labs.Sort;
  */
 public class SelectionSort implements Sort {
 
+    
+    
     /**
      * {@inheritDoc}
      */
     public void sort(int[] array) {
+       for (int i = 0; i < array.length-1; i++) {
+           int temp = i;
+           
+           for (int j = i + 1; j < array.length; j++) {
+               
+               if (array[temp] > array[j]) {
+                   temp = j;
+               }
+           }
+           
+           changeItems(array, i, temp);
+       
+       }
+        
+        
+        
+        
         /*
          * TODO(Студент): Реализовать метод sort класса SelectionSort
          */
