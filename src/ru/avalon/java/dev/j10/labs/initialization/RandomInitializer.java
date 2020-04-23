@@ -25,18 +25,14 @@ public class RandomInitializer implements Initializer {
      */
     @Override
     public void initialize(int[] array) {
+        Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = getRandomInt();
+            array[i] = random.nextInt(101) - 50;
         }
     }
 
     /*
          * TODO(Студент): Реализовать метод initialize класса RandomInitializer
      */
-    private static int getRandomInt() {
-        Random random = new Random();
-
-        return random.nextInt(101) - 50;
-    }
 
 }
